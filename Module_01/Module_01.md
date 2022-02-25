@@ -24,6 +24,10 @@ I'll try my best to include page titles, heading, etc to help with the page diff
 
 ## What is a _Pure_ Function? 
 
+Suggested reading:
+- Pg 124 - 139 (Definition of "pure function" & Grandma's cookies)
+- Pg 147 -  (Benefits of pure functions, )
+
 Simply put: A function whose output is dependant on the input with no side effects. 
 
 This is analogous to a math function:
@@ -40,6 +44,7 @@ f(x) = x * 2 && Launch missiles
 f(2) // 4 and some destruction... I.e side effect
 ```
 
+--- 
 ## What is immutability?
 > "My wife isn't just stubborn, she's immutable" - Me
 
@@ -101,3 +106,6 @@ A things that a function can be applied too?
 Funky Actors... Functors? 
 
 ## Combinator
+
+## Additional Reading / Resources
+- [Functors, Applicatives, And Monads In Pictures](https://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
