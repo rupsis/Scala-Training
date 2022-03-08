@@ -1,4 +1,34 @@
 # Module 01
+## < Working Title > FP: The Separation of Church and State
+
+
+If you like math (and don't lie to me, I know which ones of you are Data Scientists) you'll probably love functional programing. 
+
+If that's not enough to convince you, lets take a simple problem: 
+```
+Given a List of numbers [n_1 ... n] filter to only even numbers
+```
+
+Easy enough. So here's how you'd do it in an imperative language (C++, Java, Etc)
+
+```scala 
+
+val source: List[Int] = List.range(0, 10) 
+var destination: List[Int] = List()
+
+for(i <- 0 to source.length - 1 ){
+    if(source(i) % 2 == 0){
+        destination = destination + List(source(i))
+    }
+}
+```
+
+Okay, not _too_ bad. But here's the functional way:
+
+```scala
+val destination = List.range(0, 10).filter(_ % 2 == 0)
+```
+Boom! Done. 
 
 The author provides a free sample of the [Functional Programming Simplified](https://alvinalexander.com/downloads/fpsimplified-free-preview.pdf) book which is suffice for the readings in this module. But I highly recommend getting yourself a copy. 
 
