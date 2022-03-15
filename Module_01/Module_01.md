@@ -1,8 +1,9 @@
 # Module 01
 ## < Working Title > FP: The Separation of Church and State
 
-
 If you like math (and don't lie to me, I know which ones of you are Data Scientists) you'll probably love functional programing. 
+
+---
 
 If that's not enough to convince you, lets take a simple problem: 
 ```
@@ -12,7 +13,6 @@ Given a List of numbers [n_1 ... n] filter to only even numbers
 Easy enough. So here's how you'd do it in an imperative language (C++, Java, Etc)
 
 ```scala 
-
 val source: List[Int] = List.range(0, 10) 
 var destination: List[Int] = List()
 
@@ -28,6 +28,7 @@ Okay, not _too_ bad. But here's the functional way:
 ```scala
 val destination = List.range(0, 10).filter(_ % 2 == 0)
 ```
+
 Boom! Done. 
 
 The author provides a free sample of the [Functional Programming Simplified](https://alvinalexander.com/downloads/fpsimplified-free-preview.pdf) book which is suffice for the readings in this module. But I highly recommend getting yourself a copy. 
@@ -74,6 +75,9 @@ f(x) = x * 2 && Launch missiles
 f(2) // 4 and some destruction... I.e side effect
 ```
 
+##### Optional Readings:
+- ##### The Red Book: Chapter 1 Listing 1.1
+
 --- 
 ## What is immutability?
 > "My wife isn't just stubborn, she's immutable" - Me
@@ -102,6 +106,19 @@ mutable:
 
 > "Non-determinism = parallel processing + mutable state" - Martin Odersky (Scala creator)
 
+In Scala, we can declare mutable and immutable variables:
+```scala
+val a = 'a' // immutable variable a
+
+a = 'b' // Nope! can't do that. 
+
+// ---- 
+
+var a = 'a' // mutable variable a
+
+a = 'b' // it works! and everyone got confused. 
+```
+
 ## Higher order functions
 A language feature that treats functions like types. 
 
@@ -123,8 +140,7 @@ f_2(y(1)) ->
 
 
 
-## Random tid bits
-Generally λ (lambda) in terms of modern programs, mean "Anonymous function". Or a function with no name. Kinda like a horse with no name, but makes for a less catchy song. 
+
 
 ## Functors
 <small>reading: Pg 112 - 118 _"A short excursion to ... The Twilight Zone_</small>
@@ -136,6 +152,37 @@ A things that a function can be applied too?
 Funky Actors... Functors? 
 
 ## Combinator
+~~The love child of combos and terminator~~ A chain of functions. 
+
+
+
+Can easily be thought of like a Unix pipeline:
+```bash
+command | anotherCommand -with - flag | finalCommand > file.txt
+```
+
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Combinatory_logic): 
+> A combinator is a higher-order function that uses only function application and earlier defined combinators to define a result from its arguments.
 
 ## Additional Reading / Resources
 - [Functors, Applicatives, And Monads In Pictures](https://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
+
+## Random terminology tid bits
+Generally λ (lambda) in terms of modern programs, mean "Anonymous function". Or a function with no name. Kinda like a horse with no name, but makes for a less catchy song. 
+
+`Expressions` are bits of codes that return values
+
+`Statements` are bit of codes that do not necessarily return code, but generally modify state. 
+
+Example:
+```scala
+// an example of an expression. It returns a value  
+val lunchTimeBeverage = if(isFriday) "Beer" else "Water"
+
+// this is an example of a statement. 
+if(wifeIsntHome()){
+    cookiesEaten = cookiesEaten + 1
+}
+
+```
